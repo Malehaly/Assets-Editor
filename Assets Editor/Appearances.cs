@@ -221,7 +221,8 @@ namespace Tibia.Protobuf.Appearances {
   public enum FIXED_FRAME_GROUP {
     [pbr::OriginalName("FIXED_FRAME_GROUP_OUTFIT_IDLE")] OutfitIdle = 0,
     [pbr::OriginalName("FIXED_FRAME_GROUP_OUTFIT_MOVING")] OutfitMoving = 1,
-    [pbr::OriginalName("FIXED_FRAME_GROUP_OBJECT_INITIAL")] ObjectInitial = 2,
+    [pbr::OriginalName("FIXED_FRAME_GROUP_OUTFIT_ATTACK1")] OutfitAttack1 = 2,
+    [pbr::OriginalName("FIXED_FRAME_GROUP_OBJECT_INITIAL")] ObjectInitial = 3, ///sempre sprGroups +1. slider não pode alcançar este valor.
   }
 
   public enum PLAYER_ACTION {

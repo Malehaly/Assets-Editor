@@ -615,10 +615,10 @@
                                         <StackPanel>
                                             <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                                                 <Label Content="Group:" HorizontalAlignment="Left" VerticalAlignment="Top"/>
-                                                <Slider x:Name="SprGroupSlider" Width="50" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="SprGroupSlider_ValueChanged" Minimum="0" Maximum="{Binding Value, ElementName=A_SprGroups, Converter={StaticResource ArithmeticConverter}, ConverterParameter=-1}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,5,0,0"/>
+                                                <Slider x:Name="SprGroupSlider" Width="100" IsSnapToTickEnabled="True" TickFrequency="1" ValueChanged="SprGroupSlider_ValueChanged" Minimum="0" Maximum="{Binding Value, ElementName=A_SprGroups, Converter={StaticResource ArithmeticConverter}, ConverterParameter=-1}" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,5,0,0"/>
                                                 <Label x:Name="SprGroupType" Content="Idle" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="20,0,0,0"/>
                                             </StackPanel>
-                                            <CheckBox x:Name="SprBlendLayer" Content="Blend Layer" Height="20" Width="100" Click="SprBlendLayer_Click" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,5,0,0" />
+                                            <CheckBox x:Name="SprBlendLayer" Content="Blend Layer (Colors)" Height="20" Width="150" Click="SprBlendLayer_Click" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="0,5,0,0" />
                                             <StackPanel Orientation="Horizontal" Margin="0,5,0,0">
                                                 <Label Content="Addon" HorizontalAlignment="Left" VerticalAlignment="Top"/>
                                                 <Slider x:Name="SprAddonSlider" Width="50" IsSnapToTickEnabled="True" TickFrequency="1" Maximum="{Binding Value, ElementName=A_SprPaternY, Converter={StaticResource ArithmeticConverter}, ConverterParameter=-1}" ValueChanged="SprAddonSlider_ValueChanged" SmallChange="1" VerticalAlignment="Top" HorizontalAlignment="Left" Margin="20,5,0,0" />
@@ -628,23 +628,23 @@
                                     </StackPanel>
                                     <StackPanel HorizontalAlignment="Left" VerticalAlignment="Top" Margin="5,5,5,0" Width="320">
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="20" Margin="0,5,0,0">
-                                            <Label Content="Groups:" Width="120" Padding="0,0,0,0" Margin="10,0,0,0" HorizontalAlignment="Left"/>
-                                            <xctk:IntegerUpDown x:Name="A_SprGroups" Margin="0,0,0,0" Width="110" Minimum="1" Maximum="2" ValueChanged="A_Texture_ValueChanged" />
+                                            <Label Content="Group:" Width="120" Padding="0,0,0,0" Margin="10,0,0,0" HorizontalAlignment="Left"/>
+                                            <xctk:IntegerUpDown x:Name="A_SprGroups" Margin="0,0,0,0" Width="110" Minimum="1" Maximum="3" ValueChanged="A_Texture_ValueChanged" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="20" Margin="0,10,0,0">
                                             <Label Content="Layers:" Width="120" Padding="0,0,0,0" Margin="10,0,0,0" HorizontalAlignment="Left"/>
                                             <xctk:IntegerUpDown x:Name="A_SprLayers" Margin="0,0,0,0" Width="110" Minimum="1" Maximum="2" ValueChanged="A_Texture_ValueChanged" />
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="20" Margin="0,10,0,0">
-                                            <Label Content="Patern Width:" Width="120" Padding="0,0,0,0" Margin="10,0,0,0" HorizontalAlignment="Left"/>
+                                            <Label Content="Width/WASD:" Width="120" Padding="0,0,0,0" Margin="10,0,0,0" HorizontalAlignment="Left"/>
                                             <xctk:IntegerUpDown x:Name="A_SprPaternX" Margin="0,0,0,0" Width="110" Minimum="1" Maximum="10" ValueChanged="A_Texture_ValueChanged"/>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="20" Margin="0,10,0,0">
-                                            <Label Content="Patern Height:" Width="120" Padding="0,0,0,0" Margin="10,0,0,0" HorizontalAlignment="Left"/>
+                                            <Label Content="Height/Addons:" Width="120" Padding="0,0,0,0" Margin="10,0,0,0" HorizontalAlignment="Left"/>
                                             <xctk:IntegerUpDown x:Name="A_SprPaternY" Margin="0,0,0,0" Width="110" Minimum="1" Maximum="10" ValueChanged="A_Texture_ValueChanged"/>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="20" Margin="0,10,0,0">
-                                            <Label Content="Patern Depth:" Width="120" Padding="0,0,0,0" Margin="10,0,0,0" HorizontalAlignment="Left"/>
+                                            <Label Content="Depth/Mounts:" Width="120" Padding="0,0,0,0" Margin="10,0,0,0" HorizontalAlignment="Left"/>
                                             <xctk:IntegerUpDown x:Name="A_SprPaternZ" Margin="0,0,0,0" Width="110" Minimum="1" Maximum="10" ValueChanged="A_Texture_ValueChanged"/>
                                         </StackPanel>
                                         <StackPanel Orientation="Horizontal" HorizontalAlignment="Left" Height="20" Margin="0,10,0,0">

@@ -8,6 +8,7 @@ using System.Collections.Concurrent;
 using System.Collections.Generic;
 using System.Collections.ObjectModel;
 using System.Diagnostics;
+using System.Diagnostics.Eventing.Reader;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices;
@@ -438,7 +439,14 @@ namespace Assets_Editor
             {
                 MainWindow.Log("Invalid appearance properties for id " + CurrentObjectAppearance.Id + ", crash prevented.");
             }
-            SprGroupType.Content = SprGroupSlider.Value == 0 ? "Idle" : "Walking";
+            if (SprGroupSlider.Value == 0)
+                SprGroupType.Content = "Idle";
+            else if (SprGroupSlider.Value == 1)
+                SprGroupType.Content = "Walking";
+            else if (SprGroupSlider.Value == 2)
+                SprGroupType.Content = "Attack1";
+
+
             isObjectLoaded = true;
         }
         private void ForceSliderChange()
@@ -1027,14 +1035,22 @@ namespace Assets_Editor
             SpriteInfo spriteInfo = CurrentObjectAppearance.FrameGroup[(int)SprGroupSlider.Value].SpriteInfo;
             if (frameworkElement.Name == "A_SprGroups")
             {
-                if (A_SprGroups.Value == 1 && CurrentObjectAppearance.FrameGroup.Count == 2)
+                if (A_SprGroups.Value == 1 && CurrentObjectAppearance.FrameGroup.Count > 1)
                 {
-                    CurrentObjectAppearance.FrameGroup.RemoveAt(1);
+                    // Remove grupos extras  
+                    while (CurrentObjectAppearance.FrameGroup.Count > 1)
+                        CurrentObjectAppearance.FrameGroup.RemoveAt(CurrentObjectAppearance.FrameGroup.Count - 1);
                 }
                 else if (A_SprGroups.Value == 2 && CurrentObjectAppearance.FrameGroup.Count == 1)
                 {
                     FrameGroup newFrameGroup = CurrentObjectAppearance.FrameGroup[0].Clone();
                     newFrameGroup.FixedFrameGroup = FIXED_FRAME_GROUP.OutfitMoving;
+                    CurrentObjectAppearance.FrameGroup.Add(newFrameGroup);
+                }
+                else if (A_SprGroups.Value == 3 && CurrentObjectAppearance.FrameGroup.Count == 2)
+                {
+                    FrameGroup newFrameGroup = CurrentObjectAppearance.FrameGroup[0].Clone();
+                    newFrameGroup.FixedFrameGroup = FIXED_FRAME_GROUP.OutfitAttack1;
                     CurrentObjectAppearance.FrameGroup.Add(newFrameGroup);
                 }
             }
